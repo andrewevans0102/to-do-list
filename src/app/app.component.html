@@ -1,0 +1,39 @@
+<div class="jumbotron">
+  <h1 class="display-4">To-Do List</h1>
+  <p class="lead">This is an Angular to-do list that is hosted on Firebase and deployed with CircleCi</p>
+</div>
+<div class="container">
+  <div class="row create-item">
+    <div class="col-sm">
+      <form #todoForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="todoItem">Create Item</label>
+            <input type="text" class="form-control" id="todoItem" aria-describedby="itemHelp" placeholder="to-do item" required [(ngModel)]="createItem" name="createItem">
+            <small id="itemHelp" class="form-text text-muted">click the button below to create your item</small>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!todoForm.form.valid">Create Item</button>
+        </form>
+    </div>
+    <div class="col-sm">
+      <img src="../assets/header_image.png">
+    </div>
+  </div>
+  <div class="row show-item">
+    <div class="col-sm">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Saved Items</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of items">
+              <tr>
+                <td>{{ item.name }}</td>
+                <td><button class="btn btn-danger" (click)="deleteItem(item)">delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+</div>
+

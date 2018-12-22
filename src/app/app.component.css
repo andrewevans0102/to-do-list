@@ -1,0 +1,15 @@
+.create-item{
+    margin: 2em;
+}
+
+.show-item{
+    margin: 2em;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 0.5em;
+}
+
+img{
+    width: 10em;
+    height: 10em;
+}
